@@ -1,0 +1,16 @@
+Modyfikatory dostepu*:
+
+-> public - dla klas, interfejsow, metod, pol klas i typow wew. Nadaje dostep dla wszystkich.
+-> protected - dla elementow klasy (tez dla klas wew.). Nadaje do nich dostep dla biezacej klasy i jej podklas (dziedziczacych po niej) oraz w obrebie pakietu, w ktorym znajduje sie dana klasa.
+-> brak modyf. - nadaje dostep w obrebie biezacego pakietu
+-> private - dla elementow klasy (tez dla klas wew.). Nadaje dostep tylko w obrebie biezacej klasy.
+
+Mod. dostep.        Klasa      Pakiet      Podklasa      Inni      Uzycie przed klasa
+
+   public            tak        tak          tak         tak               tak
+   protected         tak        tak          tak         nie               nie
+   brak mod.         tak        tak          nie         nie               tak
+   private           tak        nie          nie         nie               nie
+
+
+* nie uwzgledniajac modulow

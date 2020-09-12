@@ -1,0 +1,19 @@
+Modyfikator static: (w skrocie umieszcza pole/metode w klasie, a nie w obiekcie tej klasy)
+1). przed polem klasy
+    czyni wartosc tego pola jednakowa dla kazdego obiektu tej klasy. Pola oznaczone modyfikatorem static sa wiec identyczne
+    dla kazdego obiektu danej klasy.
+    Poprawnym jest takze (pomijajac kwestie dostepnosci) zapis w psvm: Nazwa_klasy.nazwa_statycznego_pola = jakas_wartosc;
+
+2). przed metoda*
+    pozwala wywolac dana metode bez koniecznosci tworzenia obiektu klasy w ktorej znajduje sie ta metoda.
+    Poprawnym jest takze (pomijajac kwestie dostepnosci) zapis w psvm: Nazwa_klasy.nazwa_statycznej_metody();
+
+3). w statycznym bloku inicjalizacyjnym
+    zamieszczenie ponizszej formuły w klasie poskutkuje wykonaniem bloku instrukcji zawartego po modyfikatorze static
+    tylko raz, przy pierwszym odwołaniu się do danej klasy:
+    static{
+        System.out.print("Hello there!");
+    }
+
+*Metoda statyczna może "dotykać" tylko statycznych pól i wywoływać tylko statyczne metody w ramach klasy.
+ Odwołania "this" i "super" nie mogą być wykorzystywane w ramach metody statycznej.

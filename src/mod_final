@@ -1,0 +1,10 @@
+Modyfikator final:
+1) przed zmienna
+    sprawi, że zmienna będzie musiała zostać zainicjalizowana przed końcem działania konstruktora, a po zakończeniu jego działania
+    nie będzie można jej zmieniać = musi zostac zadeklarowana przy tworzeniu obiektu, a potem nie moze byc juz zmieniona.
+2) przed metoda
+    sprawi, że nie będzie można takiej metody nadpisywać przy dziedziczeniu. (ale nie zmienia to faktu, że i tak jest dziedziczona)
+3) przed klasa
+    sprawi, że po danej klasie nie będzie można dziedziczyć.
+4) dla parametru metody
+    sprawi, że dany parametr pozostanie niezmienny wewnatrz ciala metody.
