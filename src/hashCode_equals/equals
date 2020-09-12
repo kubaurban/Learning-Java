@@ -1,0 +1,2 @@
+Metoda equals nie potrzebuje nadpisywania w przypadku obiektow typu String, Integer itp. bo zwraca wartosc true,
+jesli oba obiekty sa identyczne.
