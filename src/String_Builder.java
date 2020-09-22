@@ -1,5 +1,5 @@
 public class String_Builder {
-    /** Klasa String jest napisana w sposob nieobiektowy - kazda modyfikacja obiektu tej klasy tworzy nowy obiekt klasy String.
+    /* Klasa String jest napisana w sposob nieobiektowy - kazda modyfikacja obiektu tej klasy tworzy nowy obiekt klasy String.
      * Dobrym rozwiazaniem jest wiec dojscie do tablicy znakow z jakiej sklada sie String i jej modyfikacja bez tworzenia nowych
      * obiektów. Przydatna w tym celu (zwlaszcza przy operowaniu na wiekszych plikach) jest klasa StringBuilder (ew. StringBuffer)
      */
