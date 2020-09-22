@@ -1,6 +1,6 @@
 package SQLite;
 
-public class Person {
+public class Person { // we wzorcu projektowym MVC (Model - View - Controller) jest to Model
     private int ID;
     private String name;
     private String surname;
@@ -15,6 +15,8 @@ public class Person {
                 + ", email: " + email
                 + ", nr telefonu: " + tel_number;
     }
+
+    public Person(){}
 
     public Person(int ID, String name, String surname, String email, String tel_number) {
         this.ID = ID;
