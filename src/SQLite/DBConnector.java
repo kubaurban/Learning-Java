@@ -18,12 +18,16 @@ import java.util.List;
  * aplikacją, a źródłem danych), i najlepiej byłoby, aby każda encja (tutaj dla uproszczenia = tabela w bazie danych) miała
  * swoje DAO.
  * */
-
 public class DBConnector {
     private Connection con; /* obiekt interfejsu Connection (w skrocie, a tak naprawde obiekt klasy implementujacej Connection o nazwie SQLiteConnection - zawarty w pobranym sterowniku). Odpowiada m.in. za utworzenie polaczenia miedzy baza danych, a aplikacja.*/
     private Statement stat; /* interfejs Statement jest uzywany do wprowadzania zwyklych komend SQL*/
+    private static DBConnector onlyInstance;
 
-    public DBConnector() { /* konstruktor tworzy polaczenie z baza i obiekt Statement pozwalajacy na wykonywanie zapytan sql
+    /**
+     * Ponieważ potrzebujemy w aplikacji tylko jednego obiektu klasy DBConnector, korzystam ze wzorca projektowego Singleton
+     * (w implementacji kontruktora oraz pisząc metodę statyczną .getOnlyInstance())
+     */
+    private DBConnector() { /* konstruktor tworzy polaczenie z baza i obiekt Statement pozwalajacy na wykonywanie zapytan sql
                           oraz stwarza (o ile nie istnieje tabele w bazie)*/
         try{
             Class.forName("org.sqlite.JDBC");
@@ -44,6 +48,13 @@ public class DBConnector {
             throwables.printStackTrace();
         }
         createStructures();
+    }
+
+    public static DBConnector getOnlyInstance() {
+        if (onlyInstance == null) {
+            onlyInstance = new DBConnector();
+        }
+        return onlyInstance;
     }
 
     public boolean createStructures(){ /* stwarza pierwsza tabele w bazie (o ile nie istnieje zadna) */
@@ -116,6 +127,52 @@ public class DBConnector {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return null;
+        }
+        return people;
+    }
+
+    public List<Person> getResults(String columnLabel, int warunek) {
+        List<Person> people = new LinkedList<>();
+        try {
+            ResultSet result = stat.executeQuery("SELECT * FROM osoby WHERE " + columnLabel + " = " + warunek);
+            int id;
+            String name;
+            String surname;
+            String email;
+            String tel_number;
+            while (result.next()) {
+                id = result.getInt("ID");
+                name = result.getString("name");
+                surname = result.getString("surname");
+                email = result.getString("email");
+                tel_number = result.getString("tel_number");
+                people.add(new Person(id, name, surname, email, tel_number));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return people;
+    }
+
+    public List<Person> getResults(String columnLabel, String warunek) {
+        List<Person> people = new LinkedList<>();
+        try {
+            ResultSet result = stat.executeQuery("SELECT * FROM osoby WHERE " + columnLabel + " = \"" + warunek + "\"");
+            int id;
+            String name;
+            String surname;
+            String email;
+            String tel_number;
+            while (result.next()) {
+                id = result.getInt("ID");
+                name = result.getString("name");
+                surname = result.getString("surname");
+                email = result.getString("email");
+                tel_number = result.getString("tel_number");
+                people.add(new Person(id, name, surname, email, tel_number));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
         return people;
     }
