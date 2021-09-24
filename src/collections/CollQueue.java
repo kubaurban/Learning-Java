@@ -18,7 +18,7 @@ m.in. ograniczanie rozmiaru kolejki, sprawdzanie czy poprawnie zostal dodany ele
         Queue<String> que = new ArrayDeque<>(); /* ArrayDeque nie jest ograniczona przez rozmiar, dostosowuje sie rozmiarem do
         dodawanych elementow. */
 
-        Queue<String> pque = new PriorityQueue<String>(3, new Comparing()); /* PriorityQueue dodając nowy element
+        Queue<String> pque = new PriorityQueue<>(3, new Comparing()); /* PriorityQueue dodając nowy element
         do kolekcji od razu wskakuje na pozycję wynikającą z jakiegoś sortowania (interfejs interfaces.Comparator). Deklaracja moze odbywac
         sie za pomoca dwoch parametrow: new PriorityQueue<Object o>(objętość_kolejki,obiekt_Comparator);
         obiekt_Comparator wyznacza rodzaj sortowania kolejki (powyzej sortuje rosnaco - alfabet.).

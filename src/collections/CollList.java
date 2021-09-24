@@ -8,7 +8,7 @@ import java.util.List;
 public class CollList {
     public static void main(String[] args) {
         List<String> tab = new ArrayList<>(); /* ArrayList to lista tablicowa, szybki odczyt, ale trudne modyfikacje (np. do usuniecia
-         elementu potrzeba przekopiowania calej tablicy do nowej, bez tego elementu)*/
+         elementu potrzeba przekopiowania całej tablicy do nowej, bez tego elementu)*/
 
         tab.add("ala");
         tab.add("ma");
@@ -16,11 +16,12 @@ public class CollList {
         tab.add("ala");
         tab.remove("kota");
 
-        List<String> list = new LinkedList<>(tab); /* LinkedList to lista wiazana (zlozona z wezlow - klasa Node<>),
-        dluzszy odczyt, ale prostsze modyfikacje (np. do usuniecia elementu wystarczy "wyrwac" go, przerywajac jego linki
-        z sasiadami, a sasiadujace elementy podlinkowac ze soba nawzajem. Kazdy element listy wiazanej (wezel) przechowuje
-        informacje dotyczace przechowywanego elementu (jakiegos obiektu) oraz poprzedniego i nastepnego wezla(elementu) listy */
+        List<String> list = new LinkedList<>(tab); /* LinkedList to lista wiązana (złożona z węzłów - klasa Node<>),
+        dłuższy odczyt, ale prostsze modyfikacje (np. do usunięcia elementu wystarczy "wyrwać" go, przerywając jego linki
+        z sąsiadami, a sąsiadujące elementy podlinkować ze sobą nawzajem. Każdy element listy wiązanej (węzeł) przechowuje
+        informacje dotyczące przechowywanego elementu (jakiegoś obiektu) oraz poprzedniego i następnego węzła(elementu) listy */
 
+        list.remove("ala");
 //      Taki kod wyrzuci blad ConcurrentModificationException:
 //        for (String s : tab) {
 //            tab.remove(s);
