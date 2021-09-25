@@ -8,10 +8,10 @@ public class Main {
         boolean same = Util.<Integer, String>compare(p1, p2); // ewentualnie: boolean same = Util.compare(p1, p2);
 
         if(same){
-            System.out.println(p1.toString() + " is the same as " + p2.toString());
+            System.out.println(p1 + " is the same as " + p2);
         }
         else {
-            System.out.println(p1.toString() + " is NOT the same as " + p2.toString());
+            System.out.println(p1 + " is NOT the same as " + p2);
         }
     }
 }

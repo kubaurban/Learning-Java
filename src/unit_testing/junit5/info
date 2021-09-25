@@ -1,0 +1,26 @@
+  Ważne adnotacje:
+    @BeforeEach - metoda oznaczona tą adnotacją wykonywana jest przed każdym testem
+    @AfterEach - metoda oznaczona tą adnotacją wykonywana jest po każdym teście
+    @AfterAll i @BeforeAll - odpowiedniki @AfterClass i @BeforeClass z JUnit4
+
+    @DisplayName - adnotacja użyta po adnotacji @Test nadaje testowi nazwę przekazaną w parametrze
+
+    @Nested - JUnit5 umożliwia zagnieżdżanie klas testowych, ta adnotacja znajduje się przed klasą wewnętrzną (fajne!)
+
+    @RepeatedTest(how_many) - JUnit5 umożliwia wykonywanie testów kilkakrotnie, how_many razy
+
+    @Disabled - JUnit5 pozwala na dodanie tej adnotacji przed testem w celu jego zignorowania
+
+    @ExtendWith - JUnit5 zapewnia mechanizm rozszerzeń. Ta adnotacja jako element przyjmuje implementację interfejsu Extension (?)
+
+
+  Ważne metody statyczne klasy Assertions (oprócz analogów z JUnit4 Assert):
+    assertThrows - jako pierwszy parametr przyjmuje klasę wyjątku (np. IllegalArgumentException.class)
+                   i jako drugi parametr przyjmuje implementację interfejsu funkcyjnego Executable, która rzuca wyjątek (to testujemy).
+                   Przykładem takiej implementacji są wyrażenia lambda!
+    assertAll - przyjmuje listę implementacji interfejsu funkcyjnego Executable i kolejno je wykonuje, co pozwala na
+                wykonanie kilku asercji w jednym bloku.
+
+
+  Istotna jest również możliwość tworzenia własnych adnotacji sklejonych z istniejących.
+
