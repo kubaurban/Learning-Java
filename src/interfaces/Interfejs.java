@@ -7,7 +7,6 @@ public interface Interfejs {
     Zeby zaimplementowac interface do class - patrz interfaces.file_writing_interfejs
     w interfejsie wszytsko jest publiczne! */
     void log(String tekst) throws FileNotFoundException;
-
     default int domyslna() { /* interfejsy moga zawierac metody domyslne, zawierajace implementacje. Klasy implementujace nie musza
                              jej implementowac */
         return 0;

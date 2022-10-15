@@ -29,7 +29,7 @@ public class CollList {
         /* w listach, podczas iterowania ich elementow, mozemy dokonywac modyfikacji o ile nie zmieniaja one rozmiaru naszej
         listy, wiec nie mozemy z niej bezposrednio usuwac elementow. Mozemy to za to robic przy uzyciu interfejsu Iterator:
          */
-        for (Iterator<String> i = tab.iterator();  i.hasNext(); ) { //?
+        for (Iterator<String> i = tab.iterator();  i.hasNext(); ) {
             i.next();
             i.remove();
         }

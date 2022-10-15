@@ -28,6 +28,8 @@ public enum MovieCategory2 {
         this.displayName = displayName;
     }
 
+    abstract boolean isCool(); // w Enumie moga znajdowac sie tez abstrakcyjne metody, jednak ich implementacja musi znajdowac sie przy wartosciach Enuma (patrz wyzej na wartosci i rozwin {...})
+
     public String getDisplayName() {
         return displayName;
     }
@@ -37,6 +39,4 @@ public enum MovieCategory2 {
                                ale w rzeczywistosci jest zbedna, bo robi tyle co sama domyslana funkcja .name() */
         return name();
     }
-
-    abstract boolean isCool(); // w Enumie moga znajdowac sie tez abstrakcyjne metody, jednak ich implementacja musi znajdowac sie przy wartosciach Enuma (patrz wyzej na wartosci i rozwin {...})
 }

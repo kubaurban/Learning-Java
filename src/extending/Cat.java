@@ -2,7 +2,7 @@ package extending;
 
 import java.io.Serializable;
 
-public class Cat extends Animal implements Serializable {
+public class Cat extends Animal implements Serializable /*patrz uzycie Serializable w on_files/ObiektyWPlikach*/  {
     private String name;
     private String color;
     private int lives;

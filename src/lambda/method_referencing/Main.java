@@ -31,16 +31,16 @@ public class Main {
                                         // metody compare interfejsu Comparator<>, której ciałem będzie ciało metody compareTo
 
         /*
-          Referencja metody statycznej.
+          Referencja metody statycznej. Tutaj liczba argumentow jest taka sama!
          */
-        ToStringFunction<String> supplier = String::valueOf;
-        supplier.fun("ROMEK");
+        ToStringFunction<String> function1 = String::valueOf;
+        function1.fun("ROMEK");
 
         /*
           Referencja konstruktora.
          */
                                                                 // metoda interfejsowa ma tyle parametrów ile konstruktor
-        Supplier<String> objectSupplier = String::new;          // konstruktor bezparametrowy
+        Supplier<String> stringSupplier = String::new;          // konstruktor bezparametrowy
         ToStringFunction<String> stringFunction = String::new;  // konstruktor jednoparametrowy przyjmujący String
 
 
